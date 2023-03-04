@@ -1,0 +1,20 @@
+dotnet --info
+
+#Get list of templates
+dotnet new list
+
+#create .gitignore
+dotnet new gitignore
+
+dotnet new sln
+
+#Add project with a test project
+dotnet new console -o <project>
+dotnet new mstest -o <project>.Tests
+
+#Add projects to solution
+dotnet sln add ./<project>/<project>.csproj
+dotnet sln add ./<project>.Tests/<project>.Tests.csproj
+
+#Reference the main project from the test project
+dotnet add ./<project>.Tests/<project>.Tests.csproj reference ./<project>/<project>.csproj
