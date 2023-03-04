@@ -1,6 +1,7 @@
 namespace MarsRover.RoverNav;
 
-public class Coordinates
+//See records -> https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records
+public record struct Coordinates
 {
   public int X { get; }
   public int Y { get; }
@@ -19,18 +20,6 @@ public class Coordinates
     Direction.West => new Coordinates(X - 1, Y),
     _ => new Coordinates(X, Y)
   };
-
-  public override bool Equals(object? obj)
-  {
-    return obj is Coordinates coordinates &&
-           X == coordinates.X &&
-           Y == coordinates.Y;
-  }
-
-  public override int GetHashCode()
-  {
-    return HashCode.Combine(X, Y);
-  }
 
   public override string ToString()
   {

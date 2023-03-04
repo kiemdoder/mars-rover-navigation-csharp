@@ -35,7 +35,7 @@ public class Rover
 
   public void Turn(TurnDirection turnDirection)
   {
-    direction = DirectionOperations.Turn(direction, turnDirection);
+    direction = direction.Turn(turnDirection);
   }
 
   public bool Move(Area area, List<Rover> otherRovers)

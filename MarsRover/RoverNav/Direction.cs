@@ -9,6 +9,7 @@ public enum Direction
   Unknown
 }
 
+//TODO: add an extention method in stead of the thing below: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration
 public static class DirectionOperations
 {
 
@@ -20,7 +21,7 @@ public static class DirectionOperations
     return Direction.Unknown;
   }
 
-  public static Direction Turn(Direction direction, TurnDirection turnDirection) {
+  public static Direction Turn(this Direction direction, TurnDirection turnDirection) {
     if (turnDirection == TurnDirection.Right) {
       return direction switch {
         Direction.North => Direction.East,
